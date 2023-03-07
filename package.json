@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build:ui": "rmdir build /s /q & cd ../exercise_phonebook && npm run build && robocopy /e build ../exercisepart3/build",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push",
     "start": "node index.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
